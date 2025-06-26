@@ -1,0 +1,148 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+body{
+  background-color: white;
+}
+.expense-container{
+  background-color: rgb(227, 231, 241);
+  padding: 200px;
+  border-radius: 30px;
+  box-shadow: 0 0 10px  rgb(249, 247, 249);
+  max-width:2000px;
+  margin:0 auto; 
+  margin-top:50px;
+}
+
+.expense-item{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px;
+  border:1px solid #240483;
+  border-radius:30px;
+  margin-bottom:10px;
+
+}
+
+.expense-item.income{
+  
+  border-right:30px solid #23cf05;
+}
+.expense-item.expense{
+  border-right:30px solid #b50909;
+}
+.expense-item.income .expense-amount{
+  color:#23cf05;
+
+}
+.expense-item.expense .expense-amount{
+  color:hsl(0, 92%, 47%);
+
+}
+
+.expense-form{
+  padding:10px;
+  padding-top:20 px;
+  border-radius:30px;
+  margin-top: auto;
+  gap:100px;
+}
+.form-group{
+  display:flex;
+   flex-direction:column;
+  gap:5 px;
+  margin-bottom:10px;
+}
+
+input{
+  padding: 30px;
+  border: 1px solid #170404;
+  border-radius: 30px;
+  font-size: 50px;
+
+}
+button{
+  padding: 30px;
+  font-size: 40px;
+  border-radius: 50px;
+  border: none;
+  background-color: #04095f;
+  color: #fff;
+  cursor: pointer;
+  width: 70%;
+}
+.balance-container{
+  background-color: #04095f;
+  border-radius: 100px;
+  padding: 100px;
+  display: flex;
+  justify-content: space-around;
+
+}
+.current-item{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #0e3087;
+  color: #fff;
+  border-radius: 10px;
+  padding: 100px 100px;
+}
+.current-item .title{
+  font-size: 40px;
+  text-transform: uppercase;
+  
+}
+.current-item .amount{
+  font-size: 50px;
+  font-weight: bold;
+}
+.current-item .amount.income{
+color: green;
+
+}
+.current-item .amount.expense{
+color: red;
+
+}
+.error{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #dc0202;
+  font-size: 50px;
+  margin-bottom: 10px;
+}
+h1{
+  text-align: center;
+  color: black;
+  margin-bottom: auto;
+  margin-top: auto;
+  font-size: 100px;
+}
+label{
+  display: flex;
+  float:left;
+}
+.small-button{
+  padding: 10px;
+  font-size: 40px;
+  border-radius: 30px;
+  border: none;
+  background-color: #4b0248;
+  color: #fff;
+  cursor: pointer;
+  width: 30%;
+  margin-top: 5px;
+
+}
+.History{
+  background-color: white;
+  border-radius: 30px;
+  padding: 50px;
+  margin-top: 20px;
+}
