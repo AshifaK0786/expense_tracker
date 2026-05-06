@@ -100,13 +100,10 @@ const deleteExpense=async(id)=>{
     
     return(
         <div className="expense-container">
-        <h1>
-            EXPENSE TRACKER
-            <BalanceContainer expense={expense}/>
-            <ExpenseForm  addExpense={addExpense}itemToEdit={itemToEdit} setItemToEdit={setItemToEdit}  editExpense={editExpense}/>
-            <History  expense={expense} deleteExpense={deleteExpense} setItemToEdit={setItemToEdit}/>
-            
-        </h1>
+        <h1>Expense Tracker</h1>
+        <BalanceContainer expense={expense}/>
+        <ExpenseForm  addExpense={addExpense}itemToEdit={itemToEdit} setItemToEdit={setItemToEdit}  editExpense={editExpense}/>
+        <History  expense={expense} deleteExpense={deleteExpense} setItemToEdit={setItemToEdit}/>
         </div>
     )
 }
