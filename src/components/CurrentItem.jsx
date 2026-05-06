@@ -1,12 +1,13 @@
-const CurrentItem=(props)=>{
-    const {expense}=props;
-return(
-    <div>
+const CurrentItem = (props) => {
+    const { title, amount } = props;
+    const amountClass = amount >= 0 ? "income" : "expense";
+    
+    return (
         <div className="current-item">
-            <div className="title">{props.title}</div>
-            <div className="amount">{props.amount}</div>
+            <div className="title">{title}</div>
+            <div className={`amount ${amountClass}`}>${Math.abs(amount)}</div>
         </div>
-    </div>
-)
-}
+    );
+};
+
 export default CurrentItem;

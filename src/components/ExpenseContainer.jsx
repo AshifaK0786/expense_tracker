@@ -14,10 +14,9 @@ const fetchExpenses=async()=>{
         setExpense(data);
     }
     catch(error){
-        console.log('failed to fetch the expenes:',error);
+        console.error('failed to fetch the expenses:',error);
     }
 };
-console.log(expense)
 useEffect(()=>{
     fetchExpenses();
 },[]);
@@ -31,6 +30,7 @@ const addExpense=async(title,amount)=>{
         if(response.ok){
             const newItem=await response.json();
             setExpense((prev)=>[...prev,newItem]);
+            setItemToEdit(null);
         }else{
             console.error('failed to add expense');
         }
@@ -46,24 +46,14 @@ const deleteExpense=async(id)=>{
         if(response.ok){
             await fetchExpenses();
         }else{
-            console.error('FAiled to delete');
+            console.error('Failed to delete');
         }
-    }catch{
+    }catch(error){
         console.error('Error deleting expense',error);
     }
 }
- const editExpense = async(id,title,amount) => {
-        
-        //     setExpenses(expenses.map((exp)=>{
-        //         if(exp.id===id){
-        //             return {id,title,amount}
-        //         }
-
-        //         return exp;
-        //     }))
-        
-        // setItemToEdit(null);
-        try {
+const editExpense = async(id,title,amount) => {
+    try {
         const response = await fetch(`http://localhost:3000/expense/${id}`, {
             method: 'PUT',
             headers: {
@@ -73,15 +63,15 @@ const deleteExpense=async(id)=>{
         });
         if (response.ok) {
             const updatedItem = await response.json();
-            setExpense(expenses.map((exp) => (exp._id === id ? updatedItem : exp)));
+            setExpense((prevExpense) => prevExpense.map((exp) => (exp._id === id ? updatedItem : exp)));
+            setItemToEdit(null);
         } else {
-            console.log("Failed to update expense");
+            console.error("Failed to update expense");
         }
     } catch(error) {
         console.error('Failed to edit expense', error);
     }
-    // setItemToEdit(null);
-    }
+}
 
 
 //console.log('itemToEdit',itemToEdit)

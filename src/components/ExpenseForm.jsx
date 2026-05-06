@@ -10,8 +10,11 @@ const ExpenseForm=(props)=>{
         if(props.itemToEdit){
             setTitle(props.itemToEdit.title);
             setAmount(props.itemToEdit.amount);
+        } else {
+            setTitle("");
+            setAmount("");
         }
-    }   ,[itemToEdit])
+    }, [props.itemToEdit])
 
     const isEdit = props.itemToEdit;
 
